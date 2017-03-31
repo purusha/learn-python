@@ -1,3 +1,6 @@
+#importo la print di python3 (anche se uso python2)
+from __future__ import print_function
+
 class Song(object):
     def __init__(self, lyrics):
         self.lyrics = lyrics

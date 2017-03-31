@@ -1,3 +1,5 @@
+#importo la print di python3 (anche se uso python2)
+from __future__ import print_function
 
 def single(n):
     print("n is %d" % n)
