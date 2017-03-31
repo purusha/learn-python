@@ -2,16 +2,14 @@ from cell import Cell
 from game import Game
 
 class Board:
-    def __init__(self, width, height):
+    def __init__(self, width, height, *cells):
         self._board = [[Cell(False) for y in range (0, height)] for x in range(0, width) ]
 
-    def updateAliveCell(self, *cells):
         for cell in cells:
             self._board[cell[0]][cell[1]].live()
 
         for x in range(0, len(self._board)):
             for y in range(0, len(self._board[x])):
-                #do this only one times ... if i call twice updateAliveCell we must have a problems!!
                 self._board[x][y].addNeighbours(self._getNeighboursOf(x, y))
 
     def tick(self):
