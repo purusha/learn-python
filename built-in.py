@@ -26,3 +26,34 @@ print("#" * 42)
 print(bool())
 print(bool(1))
 print("#" * 42)
+
+class MyClass:
+    def __call__():
+        pass
+
+print(callable(MyClass))
+print(callable(MyClass()))
+print("#" * 42)
+
+class MyAttr:
+    def __init__(self):
+        self.name = "Alan"
+        self.age = 34
+
+instance1 = MyAttr()
+instance2 = MyAttr()
+
+print("attributes of object {0}: {1}".format(id(instance1), instance1.__dict__))
+print("attributes of object {0}: {1}".format(id(instance2), instance2.__dict__))
+delattr(instance1, "age")
+
+print("attributes of object {0}: {1}".format(id(instance1), instance1.__dict__))
+print("attributes of object {0}: {1}".format(id(instance2), instance2.__dict__))
+print("#" * 42)
+
+print(isinstance(instance1, MyAttr))
+print("#" * 42)
+
+print(iter([1, 2, 3]))
+print(iter([1, 2, 3], MyClass()))
+print("#" * 42)
