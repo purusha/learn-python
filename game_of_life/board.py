@@ -23,21 +23,14 @@ class Board:
         return self._board[x][y]
 
     def _getNeighboursOf(self, x, y):
-        print "#" * 42
-        print "x {0}, y {1}".format(x, y)
-
         result = []
-        maxWidth = len(self._board) -1
-        maxHeight = len(self._board[0]) -1
+        xy_max = len(self._board) - 1
 
-
-        for i in range(x-1, x+1):
-            for j in range(y-1, y+1):
-                if (i < 0 or i > maxWidth or j < 0 or j > maxHeight):
-                    print "{0}, {1}, {2}".format(i, j, "NO")
+        for i in range(x-1, x+2):
+            for j in range(y-1, y+2):
+                if ((i == x and j == y) or (i < 0 or i > xy_max or j < 0 or j > xy_max)):
+                    pass
                 else:
-                    print "{0}, {1}, {2}".format(i, j, "YES")
                     result.append(self.cell(i, j))
 
-        #print "{0}, {1}, {2}".format(x, y, result)
-        return tuple(result)
+        return result
