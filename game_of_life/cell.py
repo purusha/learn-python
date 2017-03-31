@@ -22,3 +22,6 @@ class Cell:
 
     def live(self):
         self._status = True
+
+    def __str__(self):
+        return "V" if self.isAlive() else "X"
