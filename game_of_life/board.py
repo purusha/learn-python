@@ -2,14 +2,14 @@ from cell import Cell
 from game import Game
 
 class Board:
-    def __init__(self, width, height, *cells):
+    def __init__(self, width, height, *xy_cells):
         # Todo
         # if width != height throw exception
-        # if cell is over this board throw exception
+        # if xy_cells is over this board throw exception
 
         self._board = [[Cell(False) for y in range (0, height)] for x in range(0, width)]
 
-        for cell in cells:
+        for cell in xy_cells:
             self._board[cell[0]][cell[1]].live()
 
         for x in range(0, self._len()):
@@ -22,6 +22,9 @@ class Board:
                 Game.tick(self.cell(x, y))
 
     def cell(self, x, y):
+        # Todo
+        # if xy_cells is over this board throw exception
+        
         return self._board[x][y]
 
     def _len(self):

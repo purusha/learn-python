@@ -24,4 +24,4 @@ class Cell:
         self._status = True
 
     def __str__(self):
-        return "V" if self.isAlive() else "X"
+        return "-" if self.isAlive() else "X"
